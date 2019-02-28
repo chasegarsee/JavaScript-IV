@@ -1,6 +1,3 @@
-// CODE here for your Lambda Classes
-
-
 class Person {
     constructor(personAtts) {
         this.name = personAtts.name;
@@ -21,10 +18,10 @@ class Instructor extends Person{
         this.catchPhrase = instructorAtts.catchPhrase;
     }
     demo(subject) {
-        return `Today we are learning about ${this.subject}.`;
+        return `Today we are learning about ${subject}.`;
     }
     grade(student, subject) {
-return `${this.name} receives a perfect score on ${this.subject}.`;
+return `${student} receives a perfect score on ${subject}.`;
     }
 };
 
@@ -60,3 +57,37 @@ class ProjectManager extends Instructor {
     }
 };
 
+
+const alex = new Instructor ({
+    name: 'Alex Anderson',
+    age: 26,
+    location: 'Knoxville, TN.',
+    gender: 'M',
+    specialty: 'Node',
+    favLanguage: 'CSS',
+    catchPhrase: 'Go Big',
+});
+
+const noah = new ProjectManager ({
+    name: 'Noah Ohlsen',
+    age: 24,
+    location: 'Miami, FL.',
+    gender: 'M',
+    specialty: 'React',
+    favLanguage: 'JavaScript',
+    catchPhrase: 'Swole and Flexy',
+    gradClassName: 'FSW3',
+    favInstructor: 'Alex Anderson',
+});
+
+const chase = new Student ({
+    name: 'Chase Garsee',
+    age: 26,
+    location: 'Hatyai, Thailand',
+    gender: 'M',
+    previousBackground: 'None',
+    className: 'FSW18',
+    favSubjects: 'HTML, CSS, JavaScript',
+});
+
+console.log(alex.demo());
