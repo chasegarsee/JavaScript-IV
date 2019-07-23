@@ -21,7 +21,7 @@ class Instructor extends Person {
     return `Today we are learning about ${subject}.`;
   }
   grade(student, subject) {
-    return `${student} receives a perfect score on ${subject}.`;
+    return `${student.name} receives a perfect score on ${subject.name}.`;
   }
 }
 
@@ -35,11 +35,11 @@ class Student extends Person {
   listSubject() {
     return `${this.favSubjects}`;
   }
-  pRAssignment(subject) {
-    return `${this.name} has submitted a PR for ${subject}`;
+  pRAssignment() {
+    return `${this.name} has submitted a PR for ${subject.name}`;
   }
-  sprintChallenge(subject) {
-    return `${this.name} has begun a sprint challenge on ${subject}`;
+  sprintChallenge() {
+    return `${student.name} has begun a sprint challenge on ${subject.name}`;
   }
 }
 
@@ -50,10 +50,10 @@ class ProjectManager extends Instructor {
     this.favInstructor = pmAtts.favInstructor;
   }
   standUp(channel) {
-    return `${this.name} announces to ${channel} @channel standy times.`;
+    return `${this.name} announces to ${channel.name} @channel standy times.`;
   }
   debugsCode(student, subject) {
-    return `${this.name} debugs ${student}'s code on ${subject}.`;
+    return `${this.name} debugs ${student.name}'s code on ${subject.name}.`;
   }
 }
 
@@ -79,45 +79,14 @@ const noah = new ProjectManager({
   favInstructor: "Alex Anderson"
 });
 
-const chaseG = new Student({
+const chase = new Student({
   name: "Chase Garsee",
   age: 26,
   location: "Hatyai, Thailand",
   gender: "M",
-  previousBackground: "Technical Arts Director",
+  previousBackground: "None",
   className: "FSW18",
-  favSubjects: ["HTML", "CSS", "JavaScript"]
+  favSubjects: "HTML, CSS, JavaScript"
 });
 
-const cameron_macdonald = new Student({
-  name: "Cam",
-  age: 58,
-  location: "Port Angeles, WA",
-  gender: "male",
-  favLanguage: "Javascript",
-  className: "WEB18",
-  previousBackground:
-    "martial arts instructor, Honda tech, computer support tech",
-  favSubjects: ["CSS", "Javascript", "golf", "Scotland"]
-});
-
-const brellin = new Student({
-  name: "Will Umstead",
-  age: 26,
-  location: "Tuscola, Texas",
-  gender: "Male",
-  previousBackground: "Army",
-  className: "WEB18",
-  favSubjects: ["PHP", "CSS", "JavaScript"]
-});
-
-console.log(alex.speak());
 console.log(noah.speak());
-console.log(chaseG.speak());
-console.log(alex.demo("CSS"));
-console.log(alex.grade("Chase", "JavaScript"));
-console.log(noah.standUp("WEB18"));
-console.log(noah.debugsCode("Chase", "JavaScript"));
-console.log(chaseG.listSubject());
-console.log(chaseG.pRAssignment("JS:IV"));
-console.log(chaseG.sprintChallenge("JS:III"));

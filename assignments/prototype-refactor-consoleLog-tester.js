@@ -29,11 +29,11 @@ class GameObject {
 } // GAME OBJECT
 
 /*
-        === CharacterStats ===
-        * healthPoints
-        * takeDamage() // prototype method -> returns the string '<object name> took damage.'
-        * should inherit destroy() from GameObject's prototype
-      */
+      === CharacterStats ===
+      * healthPoints
+      * takeDamage() // prototype method -> returns the string '<object name> took damage.'
+      * should inherit destroy() from GameObject's prototype
+    */
 
 class CharacterStats extends GameObject {
   constructor(characterAttributes) {
@@ -47,14 +47,14 @@ class CharacterStats extends GameObject {
 } // CHARACTER STATS
 
 /*
-        === Humanoid (Having an appearance or character resembling that of a human.) ===
-        * team
-        * weapons
-        * language
-        * greet() // prototype method -> returns the string '<object name> offers a greeting in <object language>.'
-        * should inherit destroy() from GameObject through CharacterStats
-        * should inherit takeDamage() from CharacterStats
-      */
+      === Humanoid (Having an appearance or character resembling that of a human.) ===
+      * team
+      * weapons
+      * language
+      * greet() // prototype method -> returns the string '<object name> offers a greeting in <object language>.'
+      * should inherit destroy() from GameObject through CharacterStats
+      * should inherit takeDamage() from CharacterStats
+    */
 
 class Humanoid extends CharacterStats {
   constructor(humanoidAttributes) {
